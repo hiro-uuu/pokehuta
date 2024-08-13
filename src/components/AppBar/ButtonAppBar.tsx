@@ -10,13 +10,15 @@ import usePokehuta from "../../hooks/usePokehuta";
 import ReactMarkdown from "react-markdown";
 
 const markdown = `
-## ポケふたマップについて
-「ポケふたマップ」は、本家サイト [ポケモンマンホール「ポケふた」](https://local.pokemon.jp/manhole/)を参考にデータを収集し、個人で制作した非公式のWebアプリケーションです。このアプリは、各市町村に設置された、ポケモンマンホール（ポケふた）を探しやすくするためのツールであり、ポケモン公式とは一切関係ありません。  
+## 本サイト-ポケふたマップについて
+「ポケふたマップ」は、本家サイト [ポケモンマンホール「ポケふた」](https://local.pokemon.jp/manhole/)を参考にデータを収集し、個人で制作した非公式のWebアプリケーションです。
+このアプリは、各市町村に設置された、ポケモンマンホール（ポケふた）を探しやすくするためのツールであり、ポケモン公式とは一切関係ありません。  
 このプロジェクトは、個人の興味と学習目的で開発されたものです。
 もし不具合や情報の誤りにお気づきの場合は、ご連絡いただければ幸いです。
 
-### このサイトを作成した理由
-本家サイトでは、日本中のポケふたを俯瞰してみることはできません。俯瞰してポケふたの地図を日本全域で見てみたい！と思いこのアプリケーションを作成しました。
+### このサイトを作成した理由、本家サイトとの違い
+本家サイトでは、日本中のポケふたを俯瞰してみることはできません。
+俯瞰してポケふたの地図を日本全域で見たいと思い、このアプリケーションを作成しました。
 
 ### 使用した技術
 
@@ -24,6 +26,8 @@ const markdown = `
 - OpenLayers (10.0.0)
 - mui v5
 - firebase (Hosting, FireStoreを使用)
+
+[このアプリのソースコード](https://github.com/hiro-uuu/pokehuta)
 
 
 `;
@@ -52,25 +56,15 @@ export default function ButtonAppBar() {
       </AppBar>
       <Drawer open={open} setOpen={setOpen} anchor="top">
         <Box sx={{ margin: 1, height: "50vh" }}>
-          {/* <div style={{ textAlign: "right" }}>
-            <Button
-              onClick={() => {
-                setOpen(false);
-              }}
-              startIcon={<Close></Close>}
-            ></Button>
-          </div> */}
           <ReactMarkdown>{markdown}</ReactMarkdown>
           {import.meta.env.DEV && (
-            <>
-              <button
-                onClick={() => {
-                  insertData();
-                }}
-              >
-                でーたとりこみ
-              </button>
-            </>
+            <button
+              onClick={() => {
+                insertData();
+              }}
+            >
+              でーたとりこみ
+            </button>
           )}
         </Box>
       </Drawer>
