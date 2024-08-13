@@ -1,30 +1,18 @@
-# React + TypeScript + Vite
+## ポケふたマップについて
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+「ポケふたマップ」は、本家サイト [ポケモンマンホール「ポケふた」](https://local.pokemon.jp/manhole/)を参考にデータを収集し、個人で制作した非公式の Web アプリケーションです。
+このアプリは、各市町村に設置された、ポケモンマンホール（ポケふた）を探しやすくするためのツールであり、ポケモン公式とは一切関係ありません。  
+このプロジェクトは、個人の興味と学習目的で開発されたものです。
+もし不具合や情報の誤りにお気づきの場合は、ご連絡いただければ幸いです。
 
-Currently, two official plugins are available:
+### このサイトを作成した理由、本家サイトとの違い
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+本家サイトでは、日本中のポケふたを俯瞰してみることはできません。
+俯瞰してポケふたの地図を日本全域で見たいと思い、このアプリケーションを作成しました。
 
-## Expanding the ESLint configuration
+### 使用した技術
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Vite(React(TypeScript))
+- OpenLayers (10.0.0)
+- mui v5
+- firebase (Hosting, FireStore を使用)
