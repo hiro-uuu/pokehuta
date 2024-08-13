@@ -94,9 +94,12 @@ export default function SearchList({ setOpen }: Props) {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         {/* 絞り込まれたリストを表示 */}
-        <List style={{ maxHeight: "40vh" }}>
+        <List style={{ maxHeight: "40vh", overflow: "auto" }}>
           {filteredItems.map((item: Pokehuta, index: number) => (
-            <ListItemButton key={index} onClick={() => handleListClick(item)}>
+            <ListItemButton
+              key={`${index}`}
+              onClick={() => handleListClick(item)}
+            >
               <ListItemAvatar>
                 <Avatar src={item.imageUrl}></Avatar>
               </ListItemAvatar>

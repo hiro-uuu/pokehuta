@@ -92,32 +92,30 @@ const App = () => {
   };
 
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <ButtonAppBar></ButtonAppBar>
-        <Map zoom={5} center={[136, 38]}>
-          <TileLayer source={new OSM()} zIndex={0} />
-          <VectorLayer source={getSource()} maxResolution={500}></VectorLayer>
-          <VectorLayer
-            source={clusterSource}
-            style={clusterStyle}
-            minResolution={500}
-          ></VectorLayer>
-          <ClickEvent />
-          <Drawer open={open} anchor={"bottom"} setOpen={setOpen}>
-            <SearchList setOpen={setOpen} />
-          </Drawer>
-          <Fab
-            style={{ position: "absolute", right: 20, bottom: 50 }}
-            onClick={() => {
-              setOpen(true);
-            }}
-          >
-            <Search />
-          </Fab>
-        </Map>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <ButtonAppBar></ButtonAppBar>
+      <Map zoom={5} center={[136, 38]}>
+        <TileLayer source={new OSM()} zIndex={0} />
+        <VectorLayer source={getSource()} maxResolution={500}></VectorLayer>
+        <VectorLayer
+          source={clusterSource}
+          style={clusterStyle}
+          minResolution={500}
+        ></VectorLayer>
+        <ClickEvent />
+        <Drawer open={open} anchor={"bottom"} setOpen={setOpen}>
+          <SearchList setOpen={setOpen} />
+        </Drawer>
+        <Fab
+          style={{ position: "absolute", right: 20, bottom: 50 }}
+          onClick={() => {
+            setOpen(true);
+          }}
+        >
+          <Search />
+        </Fab>
+      </Map>
+    </ThemeProvider>
   );
 };
 
